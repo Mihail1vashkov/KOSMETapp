@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Записаться на процедуру</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Сайт косметологии</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Главная</a>
+            <a href="{{ url_for('appointments') }}">Процедуры</a>
+            <a href="{{ url_for('about') }}">О нас</a>
+        </nav>
+    </header>
+    <main>
+        <h2 style="text-align: center;">Записаться на процедуру "{{ procedure.name }}"</h2>
+        <form action="{{ url_for('book_appointment', procedure_id=procedure.id) }}" method="post" class="appointment-form">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required placeholder="Введите ваше имя"><br>
+
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email" required placeholder="Введите ваш email"><br>
+
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Введите ваш телефон"><br>
+
+            <label for="appointment_date">Дата записи:</label>
+            <input type="date" id="appointment_date" name="appointment_date" required><br>
+
+            <label for="appointment_time">Время записи:</label>
+            <input type="time" id="appointment_time" name="appointment_time" required><br>
+
+            <input type="submit" value="Записаться">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Сайт косметологии. Все права защищены.</p>
+    </footer>
+</body>
+</html>

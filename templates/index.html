@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт косметологии</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать на сайт косметологических услуг</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Главная</a>
+            <a href="{{ url_for('appointments') }}">Процедуры</a>
+            <a href="{{ url_for('about') }}">О нас</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="{{ url_for('static', filename='img/cosmetology_1.jpg') }}" alt="Косметологические процедуры" />
+            <div class="hero-text">
+                <h2>Идеальная красота для вас</h2>
+                <p>Мы предлагаем широкий выбор косметических процедур, чтобы помочь вам выглядеть и чувствовать себя лучше. Наши квалифицированные специалисты используют только лучшие продукты и техники.</p>
+            </div>
+        </section>
+        <section class="services">
+            <h2>Наши услуги</h2>
+            <div class="service-item">
+                <h3>Омолаживающие процедуры</h3>
+                <p>Используем передовые методики для восстановления молодости кожи.</p>
+            </div>
+            <div class="service-item">
+                <h3>Косметические процедуры</h3>
+                <p>Широкий выбор процедур для улучшения состояния кожи и общего ухода.</p>
+            </div>
+            <div class="service-item">
+                <h3>Консультации и рекомендации</h3>
+                <p>Индивидуальный подход к каждому клиенту и персонализированные рекомендации.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Сайт косметологии. Все права защищены.</p>
+    </footer>
+</body>
+</html>

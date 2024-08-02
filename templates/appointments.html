@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Процедуры</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Сайт косметологии</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Главная</a>
+            <a href="{{ url_for('appointments') }}">Процедуры</a>
+            <a href="{{ url_for('about') }}">О нас</a>
+        </nav>
+    </header>
+    <main>
+        <h2 style="text-align: center;">Доступные процедуры</h2>
+        <ul>
+            {% for procedure in procedures %}
+                <li>
+                    <h3>{{ procedure.name }}</h3>
+                    <p>{{ procedure.description }}</p>
+                    <p><strong>Время процедуры:</strong> {{ procedure.appointment_time }}</p>
+                    <a href="{{ url_for('book', procedure_id=procedure.id) }}">Записаться</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Сайт косметологии. Все права защищены.</p>
+    </footer>
+</body>
+</html>
